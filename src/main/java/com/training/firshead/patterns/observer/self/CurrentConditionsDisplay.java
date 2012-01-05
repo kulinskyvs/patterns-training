@@ -3,7 +3,6 @@
  */
 package com.training.firshead.patterns.observer.self;
 
-
 /**
  * @author vkulinsky
  *         date: 03.01.2012
@@ -12,8 +11,7 @@ package com.training.firshead.patterns.observer.self;
  */
 public class CurrentConditionsDisplay extends GenericWeatherDisplayElement {
 
-	public static final String DISPLAY_PATTERN = 
-			"Current conditions:  temperature: %f , humidity:%f , pressure:%f";
+	public static final String DISPLAY_PATTERN = "Current conditions:  temperature: %f , humidity:%f , pressure:%f";
 
 	private float temperature;
 	private float humidity;
@@ -23,7 +21,6 @@ public class CurrentConditionsDisplay extends GenericWeatherDisplayElement {
 		super(weatherSubject);
 	}
 
-	
 	public String getDisplay() {
 		return String.format(DISPLAY_PATTERN, temperature, humidity, pressure);
 	}
@@ -35,4 +32,3 @@ public class CurrentConditionsDisplay extends GenericWeatherDisplayElement {
 	}
 
 }
-

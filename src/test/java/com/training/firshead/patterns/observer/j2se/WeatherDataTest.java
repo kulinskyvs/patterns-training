@@ -1,14 +1,14 @@
 /**
  * 
  */
-package com.training.firshead.patterns.observer.self;
+package com.training.firshead.patterns.observer.j2se;
 
 import junit.framework.TestCase;
 
 /**
  * @author vkulinsky
- *         date: 04.01.2012
- *         time: 0:00:00
+ *         date: 05.01.2012
+ *         time: 23:35:19
  * 
  */
 public class WeatherDataTest extends TestCase {
@@ -26,23 +26,23 @@ public class WeatherDataTest extends TestCase {
 	}
 
 	public void testRegisterObserver() {
-		weatherData.registerObserver(new MockObserver());
+		weatherData.addObserver(new MockObserver());
 		assertEquals("Only a single observer must be registered", 1,
-				weatherData.observers.size());
+				weatherData.countObservers());
 	}
 
 	public void testDeleteObserver() {
 		MockObserver observer = new MockObserver();
-		weatherData.registerObserver(observer);
+		weatherData.addObserver(observer);
 
 		weatherData.deleteObserver(observer);
-		assertEquals("No observer must retain ", 0, weatherData.observers.size());
+		assertEquals("No observer must retain ", 0, weatherData.countObservers());
 	}
 
 	public void testNotifyObservers() {
 		MockObserver mockObserver = new MockObserver();
 
-		weatherData.registerObserver(mockObserver);
+		weatherData.addObserver(mockObserver);
 		weatherData.setMeasurements(10f, 20f, 30f);
 
 		assertEquals("Unexpected temperature value", 10f, mockObserver.getTemp(),
@@ -65,4 +65,5 @@ public class WeatherDataTest extends TestCase {
 		assertEquals("Unexpected pressure value", 30f, weatherData.getPressure(),
 				0);
 	}
+
 }

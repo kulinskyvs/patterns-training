@@ -6,6 +6,8 @@ package com.training.firshead.patterns.observer.self;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.training.firshead.patterns.observer.WeatherDataProvider;
+
 /**
  * Simple subject implementation.
  * 
@@ -14,7 +16,7 @@ import java.util.List;
  *         time: 23:24:21
  * 
  */
-public class WeatherData implements Subject {
+public class WeatherData implements Subject, WeatherDataProvider {
 
 	protected List<Observer> observers = new ArrayList<Observer>();
 
@@ -47,7 +49,6 @@ public class WeatherData implements Subject {
 		measurementsChanged();
 	}
 
-	
 	/**
 	 * @return the temperature
 	 */
@@ -55,7 +56,6 @@ public class WeatherData implements Subject {
 		return temperature;
 	}
 
-	
 	/**
 	 * @return the humidity
 	 */
@@ -63,13 +63,11 @@ public class WeatherData implements Subject {
 		return humidity;
 	}
 
-	
 	/**
 	 * @return the pressure
 	 */
 	public float getPressure() {
 		return pressure;
 	}
-	
-	
+
 }

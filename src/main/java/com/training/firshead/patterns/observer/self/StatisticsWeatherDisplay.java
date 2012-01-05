@@ -3,12 +3,11 @@
  */
 package com.training.firshead.patterns.observer.self;
 
-
 /**
  * @author vkulinsky
- * date: 03.01.2012
- * time: 23:46:11
- *
+ *         date: 03.01.2012
+ *         time: 23:46:11
+ * 
  */
 public class StatisticsWeatherDisplay extends GenericWeatherDisplayElement {
 
@@ -16,21 +15,20 @@ public class StatisticsWeatherDisplay extends GenericWeatherDisplayElement {
 	private boolean firstUpdate = true;
 	private float minTemp;
 	private float maxTemp;
-	
+
 	public StatisticsWeatherDisplay(Subject weatherSubject) {
 		super(weatherSubject);
 	}
 
-	
 	public void update(float temp, float humidity, float pressure) {
-       if (firstUpdate) {
-      	 minTemp = temp;
-      	 maxTemp = temp;
-      	 firstUpdate = false;
-       }else {
-      	 if (temp < minTemp) minTemp = temp;
-      	 if (maxTemp < temp) maxTemp = temp;
-       }
+		if (firstUpdate) {
+			minTemp = temp;
+			maxTemp = temp;
+			firstUpdate = false;
+		} else {
+			if (temp < minTemp) minTemp = temp;
+			if (maxTemp < temp) maxTemp = temp;
+		}
 	}
 
 	public String getDisplay() {
