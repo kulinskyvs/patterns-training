@@ -23,9 +23,8 @@ import com.training.firshead.patterns.abstractfactory.mswindows.MsWindowsTextFie
 
 
 /**
- * From "abstract factory" point of view this class
- * is a client (it's responsible for configuring which control 
- * factory is actually should be used in application).
+ * From "abstract factory" point of view this class is a client 
+ * (it's responsible for configuring which control factory is actually should be used in application).
  * 
  * @author vkulinsky
  * date: 11.01.2012
