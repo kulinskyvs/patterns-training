@@ -9,7 +9,7 @@ import junit.framework.TestCase;
 /**
  * Generic control factory test <br>
  * Actually, this is an example of "abstract method" pattern:
- * the class incapculates all the common logic for testing control instantiating,
+ * the class encapculates all the common logic for testing control instantiating,
  * while concrete subclasses are responsible for instantiating concrete control factory
  * implementations. <br>
  * 
